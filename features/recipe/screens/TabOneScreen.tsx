@@ -7,8 +7,8 @@ import { AppState } from "../../../redux/types";
 
 import RecipeHomeView from "../views/RecipeHomeView";
 
-import { fetchRecipes } from "../../../redux/recipeActions";
-import { fetchUser } from "../../../redux/userActions";
+import { fetchRecipes } from "../../../redux/recipe/recipeActions";
+import { fetchUser } from "../../../redux/user/userActions";
 
 type Props = {
   recipes: Record<string, Recipe>;

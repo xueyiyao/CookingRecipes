@@ -1,19 +1,19 @@
-import { Recipe } from "../src/API";
+import { Recipe } from "../../src/API";
 import { Dispatch } from "redux";
 import { API, graphqlOperation } from "aws-amplify";
-import { listRecipes } from "../src/graphql/queries";
+import { listRecipes } from "../../src/graphql/queries";
 import {
   AddRecipeAction,
   GetRecipesAction,
   EditRecipeAction,
   RemoveRecipeAction,
-} from "./types";
-import { RECIPES_ACTION_TYPES } from "./actions";
+} from "../types";
+import { RECIPES_ACTION_TYPES } from "../actions";
 import {
   createRecipe,
   updateRecipe,
   deleteRecipe,
-} from "../src/graphql/mutations";
+} from "../../src/graphql/mutations";
 
 const readSuccess = (recipes: Record<string, Recipe>): GetRecipesAction => {
   return { type: RECIPES_ACTION_TYPES.GET_RECIPES, payload: recipes };

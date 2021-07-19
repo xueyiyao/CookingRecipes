@@ -1,11 +1,11 @@
-import { USER_ACTION_TYPES } from "./actions";
+import { USER_ACTION_TYPES } from "../actions";
 import {
   GetUserAction,
   UpdateUserAction,
   UserAction,
   UserState,
-} from "./types";
-import { User } from "../src/API";
+} from "../types";
+import { User } from "../../src/API";
 
 const initialState = {
   user: {

@@ -2,8 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 import { AppState } from "../../../redux/types";
-import { addRecipe } from "../../../redux/recipeActions";
-import { updateUserInfo } from "../../../redux/userActions";
+import { addRecipe } from "../../../redux/recipe/recipeActions";
+import { updateUserInfo } from "../../../redux/user/userActions";
 import { User } from "../../../src/API";
 import { generateId } from "../../../utils/ids";
 

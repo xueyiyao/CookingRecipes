@@ -1,5 +1,5 @@
-import { Recipe } from "../src/API";
-import { RECIPES_ACTION_TYPES } from "./actions";
+import { Recipe } from "../../src/API";
+import { RECIPES_ACTION_TYPES } from "../actions";
 import {
   AddRecipeAction,
   EditRecipeAction,
@@ -7,7 +7,7 @@ import {
   RecipesAction,
   RecipesState,
   RemoveRecipeAction,
-} from "./types";
+} from "../types";
 
 const initialState = {
   recipes: {},

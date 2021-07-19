@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
-import { recipeReducer } from "./recipeReducer";
-import { transactionReducer } from "./transactionReducer";
-import { userReducer } from "./userReducer";
+import { recipeReducer } from "./recipe/recipeReducer";
+import { transactionReducer } from "./transaction/transactionReducer";
+import { userReducer } from "./user/userReducer";
 
 export default combineReducers({
   recipe: recipeReducer,

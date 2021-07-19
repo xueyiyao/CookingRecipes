@@ -74,10 +74,12 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="RecipeDetailScreen"
         component={RecipeDetailScreen}
+        options={{ headerTitle: "" }}
       />
       <TabOneStack.Screen
         name="RecipeEditScreen"
         component={RecipeEditScreen}
+        options={{ headerTitle: "Edit Recipe" }}
       />
     </TabOneStack.Navigator>
   );
@@ -96,18 +98,22 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="RecipeDetailScreen"
         component={RecipeDetailScreen}
+        options={{ headerTitle: "" }}
       />
       <TabTwoStack.Screen
         name="RecipeCreateScreen"
         component={RecipeCreateScreen}
+        options={{ headerTitle: "Create Recipe" }}
       />
       <TabTwoStack.Screen
         name="RecipeEditScreen"
         component={RecipeEditScreen}
+        options={{ headerTitle: "Edit Recipe" }}
       />
       <TabTwoStack.Screen
         name="TransactionHistoryScreen"
         component={TransactionHistoryScreen}
+        options={{ headerTitle: "Transaction History" }}
       />
     </TabTwoStack.Navigator>
   );

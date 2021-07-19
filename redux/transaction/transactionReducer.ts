@@ -1,11 +1,11 @@
-import { Transaction } from "../src/API";
-import { TRANSACTIONS_ACTION_TYPES } from "./actions";
+import { Transaction } from "../../src/API";
+import { TRANSACTIONS_ACTION_TYPES } from "../actions";
 import {
   AddTransactionAction,
   GetTransactionsAction,
   TransactionsAction,
   TransactionsState,
-} from "./types";
+} from "../types";
 
 const initialState = {
   transactions: {},

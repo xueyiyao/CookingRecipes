@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { AppState } from "../../../redux/types";
 import { bindActionCreators, Dispatch } from "redux";
 import { Recipe, Transaction } from "../../../src/API";
-import { fetchTransactions } from "../../../redux/transactionActions";
+import { fetchTransactions } from "../../../redux/transaction/transactionActions";
 import TransactionHistoryView from "../views/TransactionHistoryView";
 
 interface Props {

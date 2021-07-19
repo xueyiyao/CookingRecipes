@@ -6,9 +6,9 @@ import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 import { AppState } from "../../../redux/types";
 import { Recipe, User } from "../../../src/API";
-import { removeRecipe } from "../../../redux/recipeActions";
-import { updateUserInfo } from "../../../redux/userActions";
-import { addTransaction } from "../../../redux/transactionActions";
+import { removeRecipe } from "../../../redux/recipe/recipeActions";
+import { updateUserInfo } from "../../../redux/user/userActions";
+import { addTransaction } from "../../../redux/transaction/transactionActions";
 import { generateId } from "../../../utils/ids";
 
 import RecipeDetailView from "../views/RecipeDetailView";

@@ -6,7 +6,7 @@ import { Recipe, User } from "../../../src/API";
 
 import ProfileView from "../views/ProfileView";
 
-import { fetchUser } from "../../../redux/userActions";
+import { fetchUser } from "../../../redux/user/userActions";
 
 type Props = {
   user: User;

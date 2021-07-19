@@ -4,7 +4,7 @@ import { TabOneParamList, TabTwoParamList } from "../../../types";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 import { AppState } from "../../../redux/types";
-import { editRecipe } from "../../../redux/recipeActions";
+import { editRecipe } from "../../../redux/recipe/recipeActions";
 import { Recipe } from "../../../src/API";
 
 import RecipeFormView from "../views/RecipeFormView";

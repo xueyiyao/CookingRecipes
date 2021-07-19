@@ -1,10 +1,10 @@
-import { Transaction } from "../src/API";
+import { Transaction } from "../../src/API";
 import { Dispatch } from "redux";
 import { API, graphqlOperation } from "aws-amplify";
-import { AddTransactionAction, GetTransactionsAction } from "./types";
-import { listTransactions } from "../src/graphql/queries";
-import { TRANSACTIONS_ACTION_TYPES } from "./actions";
-import { createTransaction } from "../src/graphql/mutations";
+import { AddTransactionAction, GetTransactionsAction } from "../types";
+import { listTransactions } from "../../src/graphql/queries";
+import { TRANSACTIONS_ACTION_TYPES } from "../actions";
+import { createTransaction } from "../../src/graphql/mutations";
 
 const readSuccess = (
   transactions: Record<string, Transaction>

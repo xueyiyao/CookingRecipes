@@ -6,7 +6,7 @@ import style from "./style";
 
 const renderItem = (item: [Transaction, string]) => {
   return (
-    <View key={item[0].id} style={style.row}>
+    <View style={style.row}>
       <Text style={style.text}>{item[1]}</Text>
       <Text style={style.text}>{item[0].price}</Text>
     </View>
@@ -31,7 +31,11 @@ const TransactionHistoryView: React.FC<Props> = ({ recipes, transactions }) => {
         <Text style={style.label}>Recipe</Text>
         <Text style={style.label}>Price (CookingCoins)</Text>
       </View>
-      <FlatList data={tableRow} renderItem={({ item }) => renderItem(item)} />
+      <FlatList
+        data={tableRow}
+        renderItem={({ item }) => renderItem(item)}
+        keyExtractor={(item) => item[0].id}
+      />
     </View>
   );
 };

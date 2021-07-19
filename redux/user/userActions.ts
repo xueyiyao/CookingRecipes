@@ -1,10 +1,10 @@
-import { User, Recipe } from "../src/API";
+import { User, Recipe } from "../../src/API";
 import { Dispatch } from "redux";
 import { API, graphqlOperation } from "aws-amplify";
-import { getUser } from "../src/graphql/queries";
-import { GetUserAction, UpdateUserAction } from "./types";
-import { USER_ACTION_TYPES } from "./actions";
-import { updateUser } from "../src/graphql/mutations";
+import { getUser } from "../../src/graphql/queries";
+import { GetUserAction, UpdateUserAction } from "../types";
+import { USER_ACTION_TYPES } from "../actions";
+import { updateUser } from "../../src/graphql/mutations";
 
 const readSuccess = (user: User): GetUserAction => {
   return { type: USER_ACTION_TYPES.GET_USER, payload: user };
