@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 import { AppState } from "../../../redux/types";
 import { addRecipe } from "../../../redux/recipeActions";
 import { updateUserInfo } from "../../../redux/userActions";
-
 import { User } from "../../../src/API";
 import { generateId } from "../../../utils/ids";
+
 import RecipeFormView from "../views/RecipeFormView";
 
 const handleSubmit = (

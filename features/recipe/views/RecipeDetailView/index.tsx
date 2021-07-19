@@ -1,7 +1,7 @@
-import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { Recipe } from "../../../../src/API";
+import { useNavigation } from "@react-navigation/native";
 
 import style from "./style";
 
@@ -38,7 +38,7 @@ const RecipeDetailView: React.FC<Props> = ({
       />
       <View style={style.textContainer}>
         <Text style={style.title}>{recipe.title}</Text>
-        <Text style={style.text}>{`Ingredients: ${recipe.description}`}</Text>
+        <Text style={style.text}>{`Ingredients: \n${recipe.description}`}</Text>
         <Text style={style.text}>{`Price: ${recipe.price}`}</Text>
         {/* <Text style={style.text}>{`Author: ${recipe.author}`}</Text> */}
       </View>
@@ -56,15 +56,15 @@ const RecipeDetailView: React.FC<Props> = ({
           }
         >
           {isFavorited ? (
-            <Text>Favorited!</Text>
+            <Text style={style.buttonText}>Favorited!</Text>
           ) : (
-            <Text>Add to Favorites</Text>
+            <Text style={style.buttonText}>Add to Favorites</Text>
           )}
         </TouchableOpacity>
         {recipe.author !== userId ? (
           <TouchableOpacity
             disabled={!canPurchase}
-            style={[style.button, { backgroundColor: "lightskyblue" }]}
+            style={[style.button, { backgroundColor: "skyblue" }]}
             onPress={
               canPurchase
                 ? () => {
@@ -73,19 +73,23 @@ const RecipeDetailView: React.FC<Props> = ({
                 : () => {}
             }
           >
-            {canPurchase ? <Text>Purchase</Text> : <Text>Owned!</Text>}
+            {canPurchase ? (
+              <Text style={style.buttonText}>Purchase</Text>
+            ) : (
+              <Text style={style.buttonText}>Owned!</Text>
+            )}
           </TouchableOpacity>
         ) : (
           <View style={style.buttonRow}>
             <TouchableOpacity
-              style={[style.buttonHalf, { backgroundColor: "lightgreen" }]}
+              style={[style.buttonHalf, { backgroundColor: "forestgreen" }]}
               onPress={() => {
                 navigation.navigate("RecipeEditScreen", {
                   recipeId: recipe.id,
                 });
               }}
             >
-              <Text>Edit</Text>
+              <Text style={style.buttonText}>Edit</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -95,7 +99,7 @@ const RecipeDetailView: React.FC<Props> = ({
                 navigation.goBack();
               }}
             >
-              <Text>Delete</Text>
+              <Text style={style.buttonText}>Delete</Text>
             </TouchableOpacity>
           </View>
         )}

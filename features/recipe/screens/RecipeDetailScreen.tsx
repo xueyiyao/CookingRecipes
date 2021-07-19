@@ -1,6 +1,6 @@
 import React from "react";
-import { useRoute, RouteProp, useNavigation } from "@react-navigation/native";
-import { Alert, Text, TouchableOpacity, View } from "react-native";
+import { useRoute, RouteProp } from "@react-navigation/native";
+import { Alert, View } from "react-native";
 import { TabOneParamList, TabTwoParamList } from "../../../types";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
@@ -92,13 +92,9 @@ const RecipeDetailScreen: React.FC<Props> = (props) => {
     useRoute<
       RouteProp<TabOneParamList | TabTwoParamList, "RecipeDetailScreen">
     >().params.recipeId;
-  const navigation = useNavigation();
 
   const isFavorited = props.user.favorites.includes(recipeId);
   const canPurchase = !props.user.recipes.includes(recipeId);
-  const authorId = props.recipes[recipeId]
-    ? props.recipes[recipeId].author
-    : "";
 
   if (props.recipes[recipeId]) {
     return (

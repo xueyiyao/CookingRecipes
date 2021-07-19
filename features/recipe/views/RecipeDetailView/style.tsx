@@ -17,7 +17,7 @@ export default StyleSheet.create({
 
   title: { fontSize: 32, fontWeight: "600" },
 
-  text: { fontSize: 16, fontWeight: "500" },
+  text: { fontSize: 16, fontWeight: "500", marginVertical: 8 },
 
   buttonContainer: {
     flex: 1,
@@ -25,6 +25,8 @@ export default StyleSheet.create({
 
     margin: 16,
   },
+
+  buttonText: { fontSize: 16, fontWeight: "700", color: "white" },
 
   button: {
     height: 48,

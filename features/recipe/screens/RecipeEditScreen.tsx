@@ -1,12 +1,13 @@
 import React from "react";
-import { useRoute, RouteProp, useNavigation } from "@react-navigation/native";
-import RecipeFormView from "../views/RecipeFormView";
+import { useRoute, RouteProp } from "@react-navigation/native";
 import { TabOneParamList, TabTwoParamList } from "../../../types";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 import { AppState } from "../../../redux/types";
 import { editRecipe } from "../../../redux/recipeActions";
 import { Recipe } from "../../../src/API";
+
+import RecipeFormView from "../views/RecipeFormView";
 
 const handleEdit = (
   title: string,

@@ -4,35 +4,47 @@ export default StyleSheet.create({
   container: {
     backgroundColor: "white",
     height: "100%",
-    padding: 16,
-    alignItems: "center",
+  },
+
+  form: {
+    margin: 16,
+
+    justifyContent: "center",
+    // alignItems: "center",
   },
 
   fieldContainer: {
-    width: "96%",
+    marginBottom: 24,
   },
 
   label: {
-    fontSize: 24,
-    fontWeight: "500",
+    fontSize: 20,
+    fontWeight: "600",
   },
 
   input: {
-    fontSize: 20,
+    fontSize: 18,
 
     marginTop: 4,
-    marginBottom: 24,
     backgroundColor: "whitesmoke",
+  },
+
+  buttonContainer: {
+    flex: 1,
+    justifyContent: "flex-end",
+
+    margin: 16,
   },
 
   button: {
     height: 48,
-    width: "96%",
 
     justifyContent: "center",
     alignItems: "center",
 
-    backgroundColor: "green",
+    backgroundColor: "forestgreen",
     borderRadius: 8,
   },
+
+  buttonText: { fontSize: 16, fontWeight: "700", color: "white" },
 });
