@@ -27,13 +27,14 @@ export const userReducer = (
   switch (action.type) {
     case USER_ACTION_TYPES.GET_USER: {
       const { payload } = <GetUserAction>action;
+
       return {
         user: payload,
       };
     }
     case USER_ACTION_TYPES.UPDATE_USER: {
       const { userData } = <UpdateUserAction>action;
-      console.log("userData", userData);
+
       return {
         user: {
           ...userData,
