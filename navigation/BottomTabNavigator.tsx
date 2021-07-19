@@ -16,7 +16,7 @@ import { BottomTabParamList, TabOneParamList, TabTwoParamList } from "../types";
 import RecipeDetailScreen from "../features/recipe/screens/RecipeDetailScreen";
 import RecipeCreateScreen from "../features/recipe/screens/RecipeCreateScreen";
 import RecipeEditScreen from "../features/recipe/screens/RecipeEditScreen";
-import TransactionHistoryScreen from "../features/recipe/screens/TransactionHistoryScreen";
+import TransactionHistoryScreen from "../features/transaction/screens/TransactionHistoryScreen";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
