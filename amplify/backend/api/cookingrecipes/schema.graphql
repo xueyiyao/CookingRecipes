@@ -1,0 +1,24 @@
+type Recipe @model @aws_api_key {
+  id: ID!
+  author: String!
+  title: String!
+  description: String!
+  price: Int!
+}
+
+type Transaction @model @aws_api_key {
+  id: ID!
+  seller: String!
+  buyer: String!
+  recipe: String!
+  price: Int!
+}
+
+type User @model @aws_api_key {
+  id: ID!
+  username: String!
+  recipes: [String!]!
+  favorites: [String!]!
+  transactions: [String!]!
+  coins: Int!
+}

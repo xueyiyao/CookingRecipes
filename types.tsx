@@ -15,8 +15,22 @@ export type BottomTabParamList = {
 
 export type TabOneParamList = {
   TabOneScreen: undefined;
+  RecipeDetailScreen: {
+    recipeId: string;
+  };
+  RecipeEditScreen: {
+    recipeId: string;
+  };
 };
 
 export type TabTwoParamList = {
   TabTwoScreen: undefined;
+  RecipeDetailScreen: {
+    recipeId: string;
+  };
+  RecipeCreateScreen: undefined;
+  RecipeEditScreen: {
+    recipeId: string;
+  };
+  TransactionHistoryScreen: undefined;
 };
