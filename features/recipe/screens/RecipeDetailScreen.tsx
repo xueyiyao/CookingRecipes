@@ -11,6 +11,8 @@ import { updateUserInfo } from "../../../redux/userActions";
 import { addTransaction } from "../../../redux/transactionActions";
 import { generateId } from "../../../utils/ids";
 
+import RecipeDetailView from "../views/RecipeDetailView";
+
 const handleFavorite = (
   recipeId: string,
   user: User,
@@ -100,125 +102,36 @@ const RecipeDetailScreen: React.FC<Props> = (props) => {
 
   if (props.recipes[recipeId]) {
     return (
-      <View style={{ padding: 8, backgroundColor: "white", height: "100%" }}>
-        <Text style={{ fontSize: 32, fontWeight: "600" }}>
-          {props.recipes[recipeId].title}
-        </Text>
-        <Text
-          style={{ fontSize: 16, fontWeight: "500" }}
-        >{`Ingredients: ${props.recipes[recipeId].description}`}</Text>
-        <Text
-          style={{ fontSize: 16, fontWeight: "500" }}
-        >{`Price: ${props.recipes[recipeId].price}`}</Text>
-        <Text
-          style={{ fontSize: 16, fontWeight: "500" }}
-        >{`Author: ${authorId}`}</Text>
-        <TouchableOpacity
-          style={{
-            backgroundColor: "pink",
-            width: "96%",
-            height: 48,
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: 8,
-            alignSelf: "center",
-          }}
-          onPress={
-            isFavorited
-              ? () => {
-                  handleUnfavorite(recipeId, props.user, props.updateUserInfo);
-                }
-              : () => {
-                  handleFavorite(recipeId, props.user, props.updateUserInfo);
-                }
-          }
-        >
-          {isFavorited ? (
-            <Text>Favorited!</Text>
-          ) : (
-            <Text>Add to Favorites</Text>
-          )}
-        </TouchableOpacity>
-        {authorId !== props.user.id ? (
-          <TouchableOpacity
-            disabled={!canPurchase}
-            style={{
-              backgroundColor: "lightskyblue",
-              width: "96%",
-              height: 48,
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: 8,
-              alignSelf: "center",
-              marginTop: 8,
-            }}
-            onPress={
-              canPurchase
-                ? () => {
-                    handlePurchase(
-                      recipeId,
-                      props.recipes[recipeId].price,
-                      props.recipes[recipeId].author,
-                      props.user,
-                      props.addTransaction,
-                      props.updateUserInfo
-                    );
-                  }
-                : () => {}
-            }
-          >
-            {canPurchase ? <Text>Purchase</Text> : <Text>Owned!</Text>}
-          </TouchableOpacity>
-        ) : (
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-evenly",
-              marginTop: 8,
-            }}
-          >
-            <TouchableOpacity
-              style={{
-                backgroundColor: "lightgreen",
-                width: "47%",
-                height: 48,
-                justifyContent: "center",
-                alignItems: "center",
-                borderRadius: 8,
-                alignSelf: "center",
-              }}
-              onPress={() => {
-                navigation.navigate("RecipeEditScreen", { recipeId: recipeId });
-              }}
-            >
-              <Text>Edit</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              style={{
-                backgroundColor: "red",
-                width: "47%",
-                height: 48,
-                justifyContent: "center",
-                alignItems: "center",
-                borderRadius: 8,
-                alignSelf: "center",
-              }}
-              onPress={() => {
-                handleDelete(
-                  recipeId,
-                  props.user,
-                  props.removeRecipe,
-                  props.updateUserInfo
-                );
-                navigation.goBack();
-              }}
-            >
-              <Text>Delete</Text>
-            </TouchableOpacity>
-          </View>
-        )}
-      </View>
+      <RecipeDetailView
+        recipe={props.recipes[recipeId]}
+        userId={props.user.id}
+        isFavorited={isFavorited}
+        canPurchase={canPurchase}
+        handleFavorite={() => {
+          handleFavorite(recipeId, props.user, props.updateUserInfo);
+        }}
+        handleUnfavorite={() => {
+          handleUnfavorite(recipeId, props.user, props.updateUserInfo);
+        }}
+        handlePurchase={() => {
+          handlePurchase(
+            recipeId,
+            props.recipes[recipeId].price,
+            props.recipes[recipeId].author,
+            props.user,
+            props.addTransaction,
+            props.updateUserInfo
+          );
+        }}
+        handleDelete={() => {
+          handleDelete(
+            recipeId,
+            props.user,
+            props.removeRecipe,
+            props.updateUserInfo
+          );
+        }}
+      />
     );
   } else {
     return <View></View>;

@@ -33,6 +33,7 @@ export const userReducer = (
     }
     case USER_ACTION_TYPES.UPDATE_USER: {
       const { userData } = <UpdateUserAction>action;
+      console.log("userData", userData);
       return {
         user: {
           ...userData,

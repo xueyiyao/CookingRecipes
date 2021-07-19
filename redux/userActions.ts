@@ -24,6 +24,7 @@ export const fetchUser = () => (dispatch: Dispatch) => {
 };
 
 export const updateUserInfo = (user: User) => (dispatch: Dispatch) => {
+  console.log("userActions", user);
   const userCopy: Record<string, any> = { ...user };
   delete userCopy["createdAt"];
   delete userCopy["updatedAt"];

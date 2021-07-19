@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
+import style from "./style";
+
 interface Props {
   title?: string;
   description?: string;
@@ -17,37 +19,34 @@ const RecipeFormView: React.FC<Props> = (props) => {
   const navigation = useNavigation();
 
   return (
-    <View style={{ backgroundColor: "white", height: "100%" }}>
-      <Text>Recipe Create</Text>
-      <Text>Recipe title</Text>
-      <TextInput
-        defaultValue={title}
-        onChangeText={(text) => setTitle(text)}
-        style={{ backgroundColor: "whitesmoke" }}
-      />
-      <Text>Recipe Description</Text>
-      <TextInput
-        defaultValue={description}
-        onChangeText={(text) => setDescription(text)}
-        style={{ backgroundColor: "whitesmoke" }}
-      />
-      <Text>Recipe Price (CookingCoins)</Text>
-      <TextInput
-        defaultValue={price.toString()}
-        keyboardType={"numeric"}
-        onChangeText={(text) => setPrice(parseInt(text))}
-        style={{ backgroundColor: "whitesmoke" }}
-      />
+    <View style={style.container}>
+      <View style={style.fieldContainer}>
+        <Text style={style.label}>Recipe Title</Text>
+        <TextInput
+          defaultValue={title}
+          onChangeText={(text) => setTitle(text)}
+          style={style.input}
+        />
+      </View>
+      <View style={style.fieldContainer}>
+        <Text style={style.label}>Recipe Description</Text>
+        <TextInput
+          defaultValue={description}
+          onChangeText={(text) => setDescription(text)}
+          style={style.input}
+        />
+      </View>
+      <Text style={style.label}>Recipe Price (CookingCoins)</Text>
+      <View style={style.fieldContainer}>
+        <TextInput
+          defaultValue={price.toString()}
+          keyboardType={"numeric"}
+          onChangeText={(text) => setPrice(parseInt(text))}
+          style={style.input}
+        />
+      </View>
       <TouchableOpacity
-        style={{
-          backgroundColor: "green",
-          width: "96%",
-          height: 48,
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: 8,
-          alignSelf: "center",
-        }}
+        style={style.button}
         onPress={() => {
           props.onPress(title, description, price);
           navigation.goBack();
