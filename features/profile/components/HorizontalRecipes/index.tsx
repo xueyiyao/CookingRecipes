@@ -41,6 +41,11 @@ const HorizontalRecipes: React.FC<Props> = ({ label, recipes, recipeIds }) => {
         horizontal={true}
         data={recipeList}
         renderItem={({ item }) => renderItem(item)}
+        ListEmptyComponent={
+          <View style={style.textContainer}>
+            <Text style={style.text}>No Recipes Here!</Text>
+          </View>
+        }
       />
     </View>
   );

@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 export default StyleSheet.create({
   container: {
@@ -11,6 +11,18 @@ export default StyleSheet.create({
     fontWeight: "700",
 
     marginTop: 4,
+    marginHorizontal: 8,
+  },
+
+  textContainer: {
+    width: Dimensions.get("window").height / 3.5,
+    aspectRatio: 5 / 3,
+  },
+
+  text: {
+    fontSize: 18,
+    fontWeight: "400",
+
     marginHorizontal: 8,
   },
 });
