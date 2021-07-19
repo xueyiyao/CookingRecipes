@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, Text, FlatList } from "react-native";
+import { SafeAreaView, View, Text, FlatList } from "react-native";
 import { Recipe } from "../../../../src/API";
 import RecipeRow from "../../components/RecipeRow";
 
@@ -16,8 +16,9 @@ const renderItem = (item: Recipe) => {
 const RecipeHomeView: React.FC<Props> = ({ recipes }) => {
   return (
     <SafeAreaView style={style.container}>
-      <Text style={style.title}>Featured Recipes</Text>
-      <FlatList data={recipes} renderItem={({ item }) => renderItem(item)} />
+      <View style={style.listContainer}>
+        <FlatList data={recipes} renderItem={({ item }) => renderItem(item)} />
+      </View>
     </SafeAreaView>
   );
 };

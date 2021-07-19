@@ -1,10 +1,6 @@
 import * as React from "react";
-import { StyleSheet } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
-
-import EditScreenInfo from "../../../components/EditScreenInfo";
-import { Text, View } from "../../../components/Themed";
 
 import { Recipe } from "../../../src/API";
 import { AppState } from "../../../redux/types";
@@ -26,9 +22,6 @@ const TabOneScreen: React.FC<Props> = (props) => {
     props.fetchUser();
   }, []);
 
-  // console.log("here", props.recipes);
-
-  // return <View></View>;
   return <RecipeHomeView recipes={Object.values(props.recipes)} />;
 };
 

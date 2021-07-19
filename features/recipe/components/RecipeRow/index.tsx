@@ -26,7 +26,9 @@ const RecipeRow: React.FC<Props> = ({ recipe, styleProp }) => {
       }}
     >
       <View>
-        <Text style={style.title}>{recipe.title}</Text>
+        <Text style={styleProp ? [style.title, { fontSize: 20 }] : style.title}>
+          {recipe.title}
+        </Text>
         <Image
           source={{
             uri: "https://media.istockphoto.com/photos/top-view-table-full-of-food-picture-id1220017909?b=1&k=6&m=1220017909&s=170667a&w=0&h=yqVHUpGRq-vldcbdMjSbaDV9j52Vq8AaGUNpYBGklXs=",
