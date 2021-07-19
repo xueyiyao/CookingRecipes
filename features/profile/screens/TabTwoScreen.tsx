@@ -1,14 +1,7 @@
 import * as React from "react";
-import { StyleSheet } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
-
-import EditScreenInfo from "../../../components/EditScreenInfo";
-import { Text, View } from "../../../components/Themed";
-
-import { API, graphqlOperation } from "aws-amplify";
-import { getUser, listRecipes } from "../../../src/graphql/queries";
-import { AppState, UserState } from "../../../redux/types";
+import { AppState } from "../../../redux/types";
 import { Recipe, User } from "../../../src/API";
 
 import ProfileView from "../views/ProfileView";
@@ -22,11 +15,7 @@ type Props = {
 };
 
 const TabTwoScreen: React.FC<Props> = (props) => {
-  React.useEffect(() => {
-    // props.fetchUser();
-  }, []);
-
-  // console.log("User:", props.user);
+  React.useEffect(() => {}, []);
 
   return <ProfileView recipes={props.recipes} user={props.user} />;
 };
